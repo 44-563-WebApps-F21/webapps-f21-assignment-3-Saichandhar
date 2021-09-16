@@ -104,6 +104,53 @@
     </div>
 
     <hr>
+    <hr>
+
+    <div>
+
+    <h3>Circle-Line Intersection</h3>
+
+    <blockquote>To determine the position of a line with respect to a circle, we’ll find its 
+      distance from the center of the circle. Let d be this distance and r be the radius of the circle.
+       Then,
+
+        if d < r , then the line cuts the circle at two distinct points.
+        if d = r, then the line touches the circle at one point.
+        if d > r, then the line does not intersect/touch the circle. 
+    </blockquote>
+
+    <a href="https://doubleroot.in/lessons/circle/intersection-line-circle-1/">Source Link</a>
+
+
+    <pre>
+        double r, a, b, c; // given as input
+        double x0 = -a*c/(a*a+b*b), y0 = -b*c/(a*a+b*b);
+        if (c*c > r*r*(a*a+b*b)+EPS)
+        puts ("no points");
+        else if (abs (c*c - r*r*(a*a+b*b)) < EPS) {
+        puts ("1 point");
+        cout << x0 << ' ' << y0 << '\n';
+        }
+        else {
+        double d = r*r - c*c/(a*a+b*b);
+        double mult = sqrt (d / (a*a+b*b));
+        double ax, ay, bx, by;
+        ax = x0 + b * mult;
+        bx = x0 - b * mult;
+        ay = y0 - a * mult;
+        by = y0 + a * mult;
+        puts ("2 points");
+        cout << ax << ' ' << ay << '\n' << bx << ' ' << by << '\n';
+}
+    </pre>
+
+    <a href="https://cp-algorithms.com/geometry/circle-line-intersection.html">Source Code</a>
+
+    </div>
+
+
+
+
 
 
 
